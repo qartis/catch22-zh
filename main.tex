@@ -1,0 +1,48 @@
+\documentclass{book}
+\usepackage{titlesec}
+\usepackage{xeCJK}
+%\usepackage{graphicx}
+%\usepackage{wrapfig}
+%\usepackage{fancyhdr}
+%\usepackage{tocbasic}
+\usepackage{setspace}
+\usepackage{pgffor}%
+%\usepackage[top=3cm,bottom=4cm,left=3.2cm,right=2.5cm]{geometry}
+%\pagestyle{fancy}
+
+%\fancyhf{} % clear all headers and footers
+%\renewcommand{\headrulewidth}{0pt} % remove rule between header and text
+%\fancyhead[LE,RO]{\thepage} % put page number in left header on even pages,
+                            % right header on odd pages
+%\fancyhead[RE]{\nouppercase{\leftmark}} % remove uppercase on chapter title
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}} % remove "Chapter N." prefix
+
+
+%\renewcommand*{\contentsname}{目录}
+\usepackage{indentfirst}
+
+
+\setCJKmainfont{MS Song.ttf}
+
+%\newcommand{\degrees}{\ensuremath{^\circ}}
+
+\titleformat{\part}[display]{\Huge}{第 \thepart 部}{0pt}{\Huge\bfseries}
+\titleformat{\chapter}[display]{\Huge}{第 \thechapter 章}{0pt}{\Huge\bfseries}
+
+\begin{document}
+\Large
+
+\begin{spacing}{1.4}
+\tableofcontents
+\end{spacing}
+
+\setstretch{1.4}
+%\linespread{1.4}
+
+
+\foreach \ch in {1,...,41}{
+    \input{build/ch\ch.tex}
+}
+
+
+\end{document}
